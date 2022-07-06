@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Shopping cart</title>
+</head>
+<body>
+    <h1>Grocery Shopping Cart</h1>
+    <form action="/addvalue" method="get">
+        <button type="submit">Add items</button>
+    </form>
+    <div class="row">
+        <div id="content" class="col-sm-12">
+          <h1 class="title">Your Cart</h1>
+          <% orders.forEach((order)=>{ %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                      <span class=''>Name:<%= order.name %>   Quantity:<%= order.quantity %>   Unit Price:<%= order.price %>
+                          Total Price :<%= order.total  %> </span>&nbsp;
+                        <form action="/update/<%= order._id %>" method="get">
+                            <button type="submit" value="<%= order._id %>">edit</button>
+                        </form>&nbsp;
+                        <form action="/delete/<%= order._id %>" method="get">
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit" value="<%= order._id %>">update</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+          <% })%>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

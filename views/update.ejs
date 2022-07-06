@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <title>Cart Updation</title>
+    <body>
+        <h4>Updating quantity of <%=gracoery%></h4>
+        <form action="/update" method="POST">
+            <input type="hidden" name="_method" value="put">
+           <label>Please enter the quantity</label>
+           <input type="text" placeholder="quantity" name="quantity"><br><br>
+           <button type="submit">submit</button>
+        </form>
+    </body>
+</head>
